@@ -15,17 +15,18 @@ public class Study4For {
 		
 		Scanner sc = new Scanner(System.in);
 		for(int Tan = 1 ; Tan <= 3 ; Tan++) {
-			int mode = 0;
 			System.out.println("발사모드를 선택하세요 : 1=단발 / 2=점사");
-			mode = sc.nextInt();
+			int mode = sc.nextInt();
 			if(mode == 1) {
 				for(int i = 0; i <= 30 ; i++) {
 					System.out.println(oneShot +i);
 				}
+				System.out.println("탄창교체");
 			}else if(mode == 2) {
 				for(int j = 0; j <= 30 ; j+=3) {
 					System.out.println(ThreeShot + j);
 				}
+				System.out.println("탄창교체");
 			}else {
 				Tan--;
 				}
