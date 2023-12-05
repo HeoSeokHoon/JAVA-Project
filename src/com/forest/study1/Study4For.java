@@ -30,6 +30,7 @@ public class Study4For {
 				Tan--;
 				}
 			}
+		System.out.println("탄창이 모두 소모 되었습니다");
 		sc.close();
 	}
 }
