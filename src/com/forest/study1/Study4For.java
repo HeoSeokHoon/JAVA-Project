@@ -24,49 +24,68 @@ public class Study4For {
 		
 //			최종 레벨과 골드를 출력하고 게임 종료
 		Scanner sc = new Scanner(System.in);
-		for(int i = 0; i<3; i++) {
-			System.out.println("ID를 입력하세요");
-			int userId = sc.nextInt();
-			System.out.println("PW를 입력하세요");
-			int userPw = sc.nextInt();
+		int level = 1;
+		int maxLevel = 15;
+		int goldLevel = 5;
+		int gold = 0;
+		int exp = 0;
+		int id = 1234;
+		int pw = 5678;
+		boolean check = true;
+		while(check) {
 			System.out.println("1. 로그인 시도 / 2. 게임종료");
 			int select = sc.nextInt();
 			if(select == 1) {
-				if(userId == 1111 && userPw == 1111) {
-					System.out.println("게임시작");
-					int level = 1;
-					int maxLevel = 15;
-					int goldLevel = 5;
-					int gold = 0;
-					int exp = 0;
-					for(level = 1; level <= maxLevel; level++) {
-						System.out.println("level = "+level);
-						for(exp = 0; exp <= level*3; exp++) {
-//								System.out.println("exp = "+exp);
-							if(level==goldLevel) {
-								goldLevel+=5;
-								gold += 1000;
-								System.out.println("gold = "+gold);
-							}
-						}
-						if(level == maxLevel) {
-							System.out.println("level = "+level+" / gold = "+gold);
-							System.out.println("진행 여부를 선택해주세요");
-							System.out.println("1. 진행 2. 종료");
-							int select2 = sc.nextInt();
-							if(select2 == 1) {
-								System.out.println("Max 레벨을 설정해주세요");
-								maxLevel = sc.nextInt();
-							}else {
-								i=4;
-							}
-						}
-					}
+				System.out.println("ID를 입력하세요");
+				int userId = sc.nextInt();
+				System.out.println("PW를 입력하세요");
+				int userPw = sc.nextInt();
+				if(userId == id && userPw == pw) {
+					System.out.println("로그인 성공");
+					break;
 				}else {
 					System.out.println("ID와 PW를 확인하세요");
 				}
 			}else {
-				break;
+				check = false;
+			}
+		}
+		if(check) {
+			System.out.println("게임시작");
+			for(level = 1; level <= maxLevel; level++) {
+				System.out.println("level = "+level);
+				if(level==goldLevel) {
+					goldLevel+=5;
+					gold += 1000;
+					System.out.println("gold = "+gold);
+				}
+					if(level!=maxLevel) {
+						for(exp = 0; exp < level*3; exp++) {
+							System.out.println("exp = "+exp);
+						}						
+					}
+				if(level == maxLevel) {
+					System.out.println("level = "+level+" / gold = "+gold);
+					if(maxLevel>=99) {
+						System.out.println("Max 레벨은 99입니다.");
+						maxLevel=99;
+						level=level+1;
+						break;
+					}
+					System.out.println("진행 여부를 선택해주세요");
+					System.out.println("1. 진행 2. 종료");
+					int select2 = sc.nextInt();
+					if(select2 == 1) {
+						System.out.println("Max 레벨을 설정해주세요 (현재레벨 : "+level+")");
+						maxLevel = sc.nextInt();
+						level = level-1;
+						if(maxLevel>=99) {
+							System.out.println("Max 레벨은 99입니다.");
+							maxLevel=99;
+							level=level+1;
+						}
+					}
+				}
 			}
 		}
 		System.out.println("게임종료");
