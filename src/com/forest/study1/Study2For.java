@@ -10,16 +10,20 @@ public class Study2For {
 		int pw = 5678;
 
 //		 아이디와 패스워드를 입력받아서 로그인 성공여부 판단
+		boolean check = false;
+		String result = "로그인 실패";
 		for(int i = 0 ; i < 5 ; i++) {
-			int num = sc.nextInt();
-			if(num == id) {
-				System.out.println("로그인 성공");
-				i = 4;
-			}else {
-				new Scanner(System.in);
-				System.out.println("로그인 실패 : "+(i+1)+"회");
+			System.out.println("ID입력");
+			int youId = sc.nextInt();
+			System.out.println("PW입력");
+			int youPw = sc.nextInt();
+			if(youId == id && youPw == pw) {
+				check =!check;
+				result = "로그인 성공";
+				break;				
 			}
 		}
+		System.out.println(result);			
 		
 	}
 
