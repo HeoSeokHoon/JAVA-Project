@@ -28,7 +28,8 @@ public class Schoolmain {
 //		System.out.println(students[0].name);
 //		학생 수를 입력 받아서 학생의 정보를 입력 받기
 		
-		
+		SchoolController controller = new SchoolController();
+		controller.start();
 		Scanner sc = new Scanner(System.in);
 		System.out.println("학생수를 입력하세요");
 		int stuNum = sc.nextInt();
