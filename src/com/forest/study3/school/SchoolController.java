@@ -6,6 +6,8 @@ public class SchoolController {
 
 	public void start() {
 		Scanner sc = new Scanner(System.in);
+		SchoolService service = new SchoolService();
+		Student [] stu = null;
 		
 		boolean check = true;
 		while(check) {
@@ -18,10 +20,12 @@ public class SchoolController {
 			
 			switch (select) {
 			case 1 :
-				
+				stu = service.makeStudents();
 				break;
 
 			case 2 :
+				SchoolView view = new SchoolView();
+				view.view(stu);
 				break;
 			case 3 :
 				break;
@@ -29,9 +33,9 @@ public class SchoolController {
 				break;
 			default:
 				System.out.println("프래그램을 종료 합니다.");
+				sc.close();
 				check = false;
 			}
 		}
-	sc.close();
 	}
 }
