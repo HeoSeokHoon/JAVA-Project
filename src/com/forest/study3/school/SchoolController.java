@@ -7,6 +7,7 @@ public class SchoolController {
 	public void start() {
 		Scanner sc = new Scanner(System.in);
 		SchoolService service = new SchoolService();
+		SchoolView view = new SchoolView();
 		Student [] stu = null;
 		
 		boolean check = true;
@@ -24,10 +25,16 @@ public class SchoolController {
 				break;
 
 			case 2 :
-				SchoolView view = new SchoolView();
 				view.view(stu);
 				break;
+				
 			case 3 :
+				Student s = service.findByNum(stu);
+				if(s != null) {
+					view.view(s);
+				}else {
+					view.view("학생이 없다");
+				}
 				break;
 			case 4 :
 				break;

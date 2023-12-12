@@ -15,14 +15,23 @@ public class Rpgmain {
 		user1.status = "지능";
 		user1.skill = "파이어볼";
 		user1.move();
-		
-		Magiction magition = new Magiction();
-		magition = user1;
-		
 		System.out.println(user1.gender);
 		System.out.println(user1.level);
 		System.out.println(user1.status);
 		System.out.println(user1.skill);
+		
+		Magiction magition = new Magiction();
+		magition.name="winter";
+		magition.hp=100;
+		magition.mp=200;
+		
+		Magiction magition2 = new Magiction();
+		magition2.name="iu";
+		magition.info();
+		System.out.println(magition);
+		magition2.info();
+		System.out.println(magition2);
+		
 	}
 
 }
