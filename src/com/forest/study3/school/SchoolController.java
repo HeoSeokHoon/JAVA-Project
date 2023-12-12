@@ -37,6 +37,7 @@ public class SchoolController {
 				}
 				break;
 			case 4 :
+				stu = service.addStudent(stu);
 				break;
 			default:
 				System.out.println("프래그램을 종료 합니다.");

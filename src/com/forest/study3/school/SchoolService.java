@@ -6,14 +6,19 @@ public class SchoolService {
 	
 	//addStu
 	//이름, 번호, 점수를 입력 받아서 기존 배열에 추가한 효과
-	public void addStudent (Student [] stu) {
+	public Student[] addStudent (Student [] stu) {
 		Scanner sc = new Scanner(System.in);
-		Student student = new Student();
+		Student [] newStu = new Student [stu.length+1];
+		for(int i=0;i<stu.length;i++) {
+			newStu[i]=stu[i];
+		}
 		System.out.println("학생정보를 입력하세요");
 		System.out.println("1. 이름 / 2. 점수");
-		stu[i].name = sc.next();
-		stu[i].num = i+1;
-		stu[i].jumsu = sc.nextDouble();
+		newStu[stu.length].name = sc.next();
+		newStu[stu.length].num = stu.length+1;
+		newStu[stu.length].jumsu = sc.nextDouble();
+		
+		return newStu;
 	}
 	
 	//findByNum
