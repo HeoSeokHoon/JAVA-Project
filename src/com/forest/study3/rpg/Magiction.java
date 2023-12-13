@@ -1,29 +1,22 @@
 package com.forest.study3.rpg;
 
-public class Magiction {
+public class Magiction extends Character{
 
-	int level;
-	boolean gender;
-	String skill;
-	String status;
 	
-	String name;
-	int hp;
-	int mp;
-	public void move() {
-		System.out.println("이동하세요");
-	}
+	private int mp;
+	
 	public void info() {
-		String localName="abc";
-		System.out.println(this);
-		System.out.println("Name : "+this.name);
-		System.out.println("Hp : "+this.hp);
-//		this.t1();
-//		t1();
+		System.out.println(this.getName());
+		System.out.println(this.getHp());
+		System.out.println(this.getMp());
+		
 	}
 	
-	public void t1() {
-		System.out.println("Test 메서드 입니다.");
-//		this.info();
+	public int getMp() {
+		return mp;
 	}
+	public void setMp(int mp) {
+		this.mp = mp;
+	}
+	
 }
