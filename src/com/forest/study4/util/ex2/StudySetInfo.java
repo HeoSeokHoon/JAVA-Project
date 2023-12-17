@@ -11,7 +11,18 @@ public class StudySetInfo {
 	
 	public void ex0 () {
 		//배열
-		
+		int [] arr = new int[6];
+		Random random = new Random();
+		for(int i=0;i<arr.length;i++) {
+			arr[i] = random.nextInt(45)+1;
+			for(int j=0;j<i;j++) {
+				if(arr[i]==arr[j]) {
+					i--;
+				}
+			}
+		}
+		for(int i=0;i<arr.length;i++)
+		System.out.println(arr[i]);
 	}
 	
 	public void ex1_1 (){

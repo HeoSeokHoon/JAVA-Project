@@ -1,6 +1,5 @@
 package com.forest.study4.util.ex2;
 
-import java.util.Random;
 
 public class Ex2Main {
  
@@ -12,7 +11,7 @@ public class Ex2Main {
 //		System.out.println(num);
 		
 		StudySetInfo studySetInfo = new StudySetInfo();
-		studySetInfo.ex2();
+		studySetInfo.ex0();
 
 	}
 
